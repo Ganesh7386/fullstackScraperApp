@@ -23,15 +23,13 @@ function Home() {
 
 
     useEffect(()=> {
+        // the below code is used for getting data stored in local storage , which was retrieved from earlier searches
         let storedList = localStorage.getItem("articles");
-        //console.log(storedList);
         setLoading("true");
         console.log("use effect invoked");
         if(storedList) {
             try {
                 const parsedList = JSON.parse(storedList);
-                // console.log("articles found in storage");
-                // console.log(parsedList);
                 setArticlesList(parsedList);
                 setLoading("false")
                 
@@ -64,12 +62,12 @@ function Home() {
         else {
         const articlesListAsResponse = await fetch("http://localhost:5000/scrape/" , apiDetails);
         const parsedArticlesList = await articlesListAsResponse.json();
-        // console.log(parsedArticlesList)
+
         if(parsedArticlesList.ok) {
-            //console.log("successfully got");
-            //console.log(parsedArticlesList.searchResults);
+
             const resultList = parsedArticlesList.searchResults;
-            // console.log(resultList)
+            // storing results in local storage , which can be used to display previous requested articles when user again opens website
+
             localStorage.setItem("articles" , JSON.stringify(resultList));
             setArticlesList(parsedArticlesList.searchResults);
             setErrorMsg("")
@@ -83,10 +81,12 @@ function Home() {
         }
     };
 
+    // below method for handling search input value
     const handleChangingInput = (event) => {
         setSearchValue(event.target.value);
     };
 
+    // when user press enter key , the search function "getArticlesBasedOnSearchValue" will get started
     const handleKeyDownEnter = (event)=> {
         if(event.key === "Enter") {
             console.log("enter key pressed");
@@ -164,7 +164,7 @@ function Home() {
         }
     }
 
-    const decideVisibility = ()=> (isLoading=== "true" || (articlesList.length===0) ? 'none' : '' );
+    const decideVisibilityOfPagination = ()=> (isLoading=== "true" || (articlesList.length===0) ? 'none' : '' );
 
     const returnStyling = (index)=> (index=== (PagesNo-1) ? 'selectedPageStyling' : 'pageButtonStyling')
 
@@ -175,7 +175,7 @@ function Home() {
             <input className = "inputSearchElementStyling" value={searchValue} type="search" placeholder="Search for article here" onChange={handleChangingInput} onKeyDown={handleKeyDownEnter} />
             <p>{formErrorMsg}</p>
             {renderComponentBasedOnLoading()}
-            <div className = {"wholePaginationControllingContainer"} style  = {{display : decideVisibility()}}>
+            <div className = {"wholePaginationControllingContainer"} style  = {{display : decideVisibilityOfPagination()}}>
             <button className = "pageChangeButton" onClick = {shiftPageLeft} type = "button"><FaArrowLeft/></button>
             <ul>
             {pagesArray.map((_, index)=> (<button className = {returnStyling(index)} type = "button" key = {index+1}>{index+1}</button>)) }

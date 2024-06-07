@@ -10,6 +10,20 @@
     text-align: center;
 }
 
+.tryAgainBtn {
+    height : 50px;
+    width : 80px;
+    border : 2px solid lightblue;
+    color : white;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.tryAgainBtn:hover {
+    background-color: lightblue;
+    color : white;
+}
+
 .articlesContainer {
     list-style: none;
     padding-left : 0px;
