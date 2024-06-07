@@ -137,7 +137,7 @@ function Home() {
     }
 
     const loadingUi = ()=> {
-        if(isLoading=== "true" && articlesList.length === 0) {
+        if(isLoading=== "true" && articlesList.length === 0 && searchValue=== "") {
             return (
             <h1>Retrieving previous data</h1>
             )
@@ -164,7 +164,7 @@ function Home() {
         }
     }
 
-    const decideVisibilityOfPagination = ()=> (isLoading=== "true" || (articlesList.length===0) ? 'none' : '' );
+    const decideVisibilityOfPagination = ()=> (isLoading=== "true" || (articlesList.length===0) || (errorMsg !== "") ? 'none' : '' );
 
     const returnStyling = (index)=> (index=== (PagesNo-1) ? 'selectedPageStyling' : 'pageButtonStyling')
 
