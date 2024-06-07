@@ -1,0 +1,53 @@
+.eachListItemContainer {
+    min-height : 240px;
+    max-height : 300px;
+    max-width : 90%;
+    margin-bottom :5px;
+    padding : 5px;
+    margin-top : 10px;
+}
+
+.innerContainer {
+    height : 100%;
+    width : 100%;
+    background-color : #1e1e1e ;
+    border : 2px solid lightblue;
+    border-radius: 20px;
+    padding : 6px;
+}
+
+.authorDetailsContainer {
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.authorImgStyling {
+    height : 50px;
+    width : 50px;
+    border-radius: 50%;
+}
+
+.linkElementStyling {
+    text-decoration: none;
+    color : lightblue;
+}
+
+
+@media (min-width : 0px) and (max-width : 500px) {
+    .eachListItemContainer {
+        width : 100%;
+    }
+}
+
+@media (min-width : 500px) and (max-width : 1000px) {
+    .eachListItemContainer {
+        width : 40%;
+    }
+}
+
+@media (min-width : 1001px) and (max-width : 2000px) {
+    .eachListItemContainer {
+        width : 30%;
+    }
+}

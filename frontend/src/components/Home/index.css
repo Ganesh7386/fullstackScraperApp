@@ -1,0 +1,97 @@
+.bg-container {
+    background-color: #000000;
+    margin : 0px;
+    color : white;
+    height : 3000px;
+    width : 100%;
+}
+
+.headingStyling {
+    text-align: center;
+}
+
+.articlesContainer {
+    list-style: none;
+    padding-left : 0px;
+    width : 98%;
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+}
+
+
+.inputSearchElementStyling {
+    height : 40px;
+    width : 300px;
+    max-width : 150px;
+    margin-left : 15%;
+    border : none;
+    border-radius: 10px;
+}
+
+.loadingContainer {
+    display : flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.pageChangeButton {
+    height : 40px;
+    width : 40px;
+    background-color: black;
+    border : 2px solid red;
+    border-radius: 5px;
+    color : white;
+    max-width : 40px;
+    flex-shrink: 1;
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageChangeButton:hover {
+    border : 2px solid rgb(30, 179, 229);
+}
+
+.pageButtonStyling {
+    height : 30px;
+    width : 30px;
+    background-color: black;
+    border : 2px solid rgb(8, 169, 222);
+    border-radius: 5px;
+    color : white;
+    margin-left : 4px;
+
+}
+
+.selectedPageStyling {
+    height : 30px;
+    width : 30px;
+    background-color: rgb(8, 169, 222);
+    border-radius: 5px;
+    color : white;
+    margin-left : 4px;
+    border : none;
+}
+
+.wholePaginationControllingContainer {
+    display : flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 2%;
+    padding-left : 5%;
+    padding-right : 5%;
+    margin-top : 30px;
+}
+
+@media (min-width : 0px) and (max-width : 500px) {
+    .wholePaginationControllingContainer {
+        justify-content: center;
+    }
+}
