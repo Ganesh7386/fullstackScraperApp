@@ -10,4 +10,4 @@ created on 07-06-2024 for pushing full stack scraping application
       startScraping -> is a function which takes userInput text as argument , append it to "https://medium.com/search/q={userInput}
       getDateTimeOfPublish -> is a function which takes the published dates like "1 day ago" , "1 month ago" according to texts like "day" or "month" , date and time is formatted from present day to previous ago                                   dates
 -> "/frontend/src/components/Home/index.js" is jsx file for serving component related to taking input , showing output articles and also for pagination
--> "/frontend/src/components/Article/index.js" is jsx file for rendering each Article component which takes each article information as props and renders the taken information thorugh props.
+-> "/frontend/src/components/Article/index.js" is jsx file for rendering each Article component which takes each article information as props and renders the taken information thorugh props
